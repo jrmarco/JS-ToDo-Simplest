@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ToDo List</title>
+    <meta http-equiv="refresh" content="300">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script type="text/javascript" src="function.js"></script>
+    <script type="text/javascript">var blnLocalStorage = true;</script>
+</head>
+<body>
+    <div id="floatingTosts" aria-live="polite" aria-atomic="true" style="float: left;">
+        <div id="toastTmp" class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="width: 300px;">
+            <div class="toast-header">
+                <strong class="mr-auto title"></strong>
+                <button type="button" class="ml-2 mb-1 close button" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="toast-body alert alert-success"></div>
+        </div>
+    </div>
+
+    <div class="container mt-5" style="max-width: 650px;">
+        <div class="alert alert-primary" role="alert">
+          <a href="todo.html">ToDo List</a>
+        </div>
+        <div class="container mb-3" align="center">
+            <button type="button" class="btn btn-info" onclick="formToggle()">Add activity</button>&nbsp;<button type="button" class="btn btn-danger" onclick="resetActivities()">Clear all</button>
+        </div>
+        <div id="form" class="alert alert-secondary d-none" role="alert">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Activity title" id="activity">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" onclick="store()">Store</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" id="note" rows="3"></textarea>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend"><span class="input-group-text">Date</span></div>
+                <input type="text" id="date" class="form-control col-sm-4" placeholder="Date">
+                <div class="input-group-prepend"><span class="input-group-text">Time</span></div>
+                <select id="hour" class="custom-select col-sm-2"></select>
+                <div class="input-group-prepend"><span class="input-group-text">:</span></div>
+                <select id="minute" class="custom-select col-sm-2"></select>
+            </div>
+        </div>
+        <div class="alert alert-secondary" role="alert">
+            <ul id="ulActivities" class="list-group">
+            </ul>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha384-JUMjoW8OzDJw4oFpWIB2Bu/c6768ObEthBMVSiIx4ruBIEdyNSUQAjJNFqT5pnJ6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
